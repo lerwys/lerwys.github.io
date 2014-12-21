@@ -1,31 +1,25 @@
-{% include header.html %}
+---
+layout: default
+---
 
-<!-- sidebar -->
-<div class="column col-sm-3" id="sidebar">
-    <ul class="nav">
-      <li>
-          {% include sidebar.html %}
-      </li>
-    </ul>
-    <ul class="nav hidden-xs" id="sidebar-footer">
-        <li>
-        </li>
-    </ul>
+<div class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <span class="post-date">{{ page.date | date_to_string }}</span>
+  {{ content }}
 </div>
 
-<div class="column col-sm-9" id="main">
-  <div class="padding">
-    <div class="full col-sm-9">
-
-      <!-- main content -->
-      <h1>{{ page.title }}</h1>
-      <p class="muted">{{ page.date | date_to_long_string }}</p>
-
-      {{ content }}
-
-    </div> <!-- /col-9 -->
-  </div> <!-- /padding -->
-</div> <!-- /main -->
-
-{% include footer.html %}
-
+<div class="related">
+  <h2>Related Posts</h2>
+  <ul class="related-posts">
+    {% for post in site.related_posts limit:3 %}
+      <li>
+        <h3>
+          <a href="{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+          </a>
+        </h3>
+      </li>
+    {% endfor %}
+  </ul>
+</div>

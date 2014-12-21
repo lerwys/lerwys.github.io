@@ -1,15 +1,26 @@
-name: "My WebSite"
-description: "My Personal Website"
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
 
-paginate: 10
+# Permalinks
+permalink:        pretty
+relative_permalinks: true
 
-markdown: rdiscount
-permalink: pretty
-highlighter: pygments
+# Setup
+title:            Stuff
+tagline:          'Lerwys'' Stuff'
+description:      'My personal blog'
+url:              http://lerwys.github.io/
+baseurl:          /
 
-# Exclude these files from your production _site
-exclude:
-    - Gemfile
-    - Gemfile.lock
-    - LICENSE
-    - README.md
+author:
+  name:           'Lucas Russo'
+  url:            
+
+paginate:         5
+
+# Custom vars
+version:          0.0.1
+
+github:
+  repo:           https://github.com/lerwys/lerwys.github.io
